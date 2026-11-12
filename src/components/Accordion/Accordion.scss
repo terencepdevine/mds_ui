@@ -1,0 +1,71 @@
+// Accordion component styles
+// Uses BEM methodology and CSS custom properties
+// Figma: MDS.Components.Web — node 94:462
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; // Figma: spacing/3
+  padding-block: 8px; // Figma: spacing/3
+  border-bottom: 1px solid var(--border-secondary, #999999);
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--content-primary, #161619);
+
+    &:focus-visible {
+      outline: 2px solid var(--content-primary, #161619);
+      outline-offset: 2px;
+    }
+  }
+
+  // Heading/M
+  &__headline {
+    flex: 1 0 0;
+    min-width: 0;
+    overflow-wrap: break-word;
+    font-family: var(--font-family-heading, "Rubik", sans-serif);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+  }
+
+  &--open &__icon {
+    transform: rotate(180deg);
+  }
+
+  // Text/M/Regular
+  &__content {
+    width: 100%;
+    overflow-wrap: break-word;
+    font-family: var(--font-family-body, "Nunito Sans", sans-serif);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--content-secondary, #27272a);
+    font-variation-settings: "YTLC" 500, "wdth" 100;
+  }
+}
