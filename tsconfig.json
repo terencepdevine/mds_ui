@@ -26,6 +26,5 @@
     "sourceMap": true
   },
   "include": ["src"],
-  "exclude": ["src/**/*.figma.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
