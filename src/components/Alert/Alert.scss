@@ -1,0 +1,91 @@
+// Alert component styles
+// Uses BEM methodology and CSS custom properties
+// Figma: MDS.Components.Web — node 34:1387
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 16px; // Figma: spacing/5
+  border-radius: var(--radius-m, 8px);
+
+  // Status variants
+  &--default {
+    background-color: var(--background-info-subtle, #bedbff);
+  }
+
+  &--warning {
+    background-color: var(--background-notice-subtle, #ffd6a7);
+  }
+
+  &--error {
+    background-color: var(--background-negative-subtle, #ffc9c9);
+  }
+
+  &--success {
+    background-color: var(--background-positive-subtle, #b9f8cf);
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4px; // Figma: spacing/2
+    min-width: 0;
+  }
+
+  // Heading/XS
+  &__heading {
+    width: 100%;
+    margin: 0;
+    overflow-wrap: break-word;
+    font-family: var(--font-family-heading, "Rubik", sans-serif);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+    color: var(--content-primary, #161619);
+  }
+
+  // Text/M/Regular
+  &__text {
+    width: 100%;
+    overflow-wrap: break-word;
+    font-family: var(--font-family-body, "Nunito Sans", sans-serif);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--content-secondary, #27272a);
+    font-variation-settings: "YTLC" 500, "wdth" 100;
+  }
+
+  // Text/M/Bold
+  &__link {
+    font-family: var(--font-family-body, "Nunito Sans", sans-serif);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--content-link, #2b7fff);
+    font-variation-settings: "YTLC" 500, "wdth" 100;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--content-link, #2b7fff);
+      outline-offset: 2px;
+    }
+  }
+}
